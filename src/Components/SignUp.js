@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
 
-const SignUp = () => {
+const SignUp = ({setToken}) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -9,11 +9,8 @@ const SignUp = () => {
         confirmPassword: ''
     })
     const [message, setMessage] = useState('');
-    const [token, setToken] = useState('');
 
     const { name, email, password, confirmPassword } = formData;
-
-    console.log('token', token);
 
     const handleChange = (e) => {
         const value = e.target.value;
